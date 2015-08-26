@@ -1,6 +1,6 @@
 <data>
 	<main_account>
-		<usr>utha.social.water@gmail.com</usr>
+		<usr>utah.social.water@gmail.com</usr>
 		<!-- the password is here encoded so that it can't be read by looking at this code. Not secure, but obfuscated
 		     to encode a password, in python, import base64 and set password to pwd
 		     then pwd_encoded = base64.b64encode(pwd)
@@ -13,15 +13,14 @@
     </main_account>
 	<tz_offsets>
 		<!-- The following offsets are in hours from UTC for standard and daylight saving time -->
-        <std_time_utc_offset>6</std_time_utc_offset>
-        <dst_time_utc_offset>5</dst_time_utc_offset>
+        <std_time_utc_offset>7</std_time_utc_offset>
+        <dst_time_utc_offset>6</dst_time_utc_offset>
 	</tz_offsets>
 	<stations>
 		<!-- for each station, a record in this list is required.
 		    Station number is the value, while lbound and ubound are attributes indicating the 
 		    maximum and minimum range for values-->
-		<station lbound="0.0" ubound="4.0">NY1000</station>
-		<station lbound="0.0" ubound="4.0">NY1001</station>
+		<station lbound="0.0" ubound="1000.0">UT1000</station>
 	</stations>
 	<msg_identifiers>
 		<!-- a keyword must be found within a message to indicate that the message contains
@@ -30,6 +29,10 @@
 		<id>my</id>
 		<id>by</id>
 		<id>station</id>
+		<id>Utah</id>
+		<id>UT</id>
+		<id>Ut</id>
+		<id>utah</id>
 	</msg_identifiers>
 	<msg_remove_items>
 		<!-- similar to the msg_identifiers, the following text fragments are removed from
@@ -43,5 +46,9 @@
 		<remitem>height</remitem>
 		<remitem>level</remitem>
 		<remitem>#</remitem>
+		<remitem>Utah</remitem>
+		<remitem>UT</remitem>
+		<remitem>Ut</remitem>
+		<remitem>utah</remitem>
 	</msg_remove_items>
 </data>

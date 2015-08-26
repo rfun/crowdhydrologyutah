@@ -8,10 +8,13 @@ print '#       Version 1.1        #'
 print '#    a m!ke@usgs joint     #'
 print '############################'
 print 'Making some initializations'
+import hsl
+
+currentPath = os.path.dirname(os.path.abspath(__file__))
 
 
 try:
-    parfilename = sys.argv[1]
+    parfilename = currentPath+'/EXAMPLE_social.water.xml'
 except:
     raise(NoParfileFail())
 
@@ -19,7 +22,7 @@ except:
 site_params = inpardata(parfilename)
 
 # read in the site-specific parameters
-print 'Reading in the site-specific parameter file:\n\t %s' %(sys.argv[1])
+print 'Reading in the site-specific parameter file:\n\t %s' %(parfilename)
 site_params.read_parfile()
 
 
@@ -66,9 +69,15 @@ else:
     print 'Writing data to CSV files'
     allmsg.write_all_data_to_CSV()
     
-    # plot the results usung dygraphs
-    print 'plot the results using dygraphs'
-    allmsg.plot_results_dygraphs()
+    # # plot the results usung dygraphs
+    # print 'plot the results using dygraphs'
+    # allmsg.plot_results_dygraphs()
+    filepath = currentPath+'/../data/UT1000.csv'
+    print 'Processing the file'
+    hsl.processData(filepath)
+
+    print 'Cleaning out the file for next use'
+    os.remove(filepath)
     
     
     
